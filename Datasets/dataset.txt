@@ -1,0 +1,50 @@
+payload@label
+;drop table test@sqlinjection
+c / caridad s / n@norm
+-6803"") order by 1#@sqlinjection
+select * from emp@norm
+select * from emp where name='a'@norm
+select * from emp where name='a' and dept='economy'@norm
+select count(*) from emp@norm
+select count(*) from emp where dept='maths'@norm
+select count(*) from emp where dept='english'@norm
+select count(*) from emp where dept='hindi'@norm
+1))) and 6969=(select 6969 from pg_sleep(5)) and (((5333=5333@sqlinjection
+1' and 7528=2894 and 'qoyw'='qoyw@sqlinjection
+1));waitfor delay '0:0:5'--@sqlinjection
+1') where 2330=2330 and (select * from (select(sleep(5)))fzno)--@sqlinjection
+1)) and 2006=2006@sqlinjection
+-2749') as fiho where 3531=3531 or 2777=1485#@sqlinjection
+-4826 union all select 4532,4532,4532,4532,4532--@sqlinjection
+-1643' where 1968=1968 or 3484=6642@sqlinjection
+-4586') as shdb where 6176=6176 union all select 6176,6176,6176,6176#@sqlinjection
+1'+(select 'rpds' where 5870=5870 and 4595=4595#@sqlinjection
+1' and 3202=like('abcdefg',upper(hex(randomblob(500000000/2))))@sqlinjection
+-6600') union all select 5566,5566#@sqlinjection
+-5145' where 2334=2334 union all select 2334,2334,2334,2334--@sqlinjection
+1') union all select null,null,null,null#@sqlinjection
+1') waitfor delay '0:0:5' and ('fpnh'='fpnh@sqlinjection
+1%' union all select null,null,null,null,null,null,null,null,null--@sqlinjection
+1%') and 6969=(select 6969 from pg_sleep(5)) and ('%'='@sqlinjection
+1') as elnu where 5719=5719 or 8156=(select count(*) from generate_series(1,5000000))--@sqlinjection
+1) where 1402=1402;select sleep(5)#@sqlinjection
+1') as elnu where 5719=5719 or 8156=(select count(*) from generate_series(1,5000000))--@sqlinjection
+1) where 1402=1402;select sleep(5)#@sqlinjection
+calle jaime ferranz 51@norm
+castellanos de zapardiel@norm
+12163@norm
+1' where 6406=6406;select count(*) from rdb$fields as t1,rdb$types as t2,rdb$collations as t3,rdb$functions as t4--@sqlinjection
+1) and 8514=(select count(*) from domain.domains as t1,domain.columns as t2,domain.tables as t3) and (4666=4666@sqlinjection
+-3136%') or 3400=6002@sqlinjection
+1) where 7956=7956 or sleep(5)#@sqlinjection
+-7387'))) order by 1--@sqlinjection
+1')) as gfzb where 7904=7904;begin dbms_lock.sleep(5); end--@sqlinjection
+1))) union all select null,null,null#@sqlinjection
+-5622"" where 7970=7970 union all select 7970,7970,7970,7970,7970--@sqlinjection
+1%"";call regexp_substring(repeat(left(crypt_key(char(65)||char(69)||char(83),null),0),500000000),null)--@sqlinjection
+1%'))) and 8148=like('abcdefg',upper(hex(randomblob(500000000/2))))--@sqlinjection
+8496429893525706@norm
+tweddle@norm
+t324a3ra5a@norm
+-2583"") where 3455=3455 or make_set(9354=9354,7185)--@sqlinjection
+1%'))) and 8148=like('abcdefg',upper(hex(randomblob(500000000/2))))--@sqlinjection
