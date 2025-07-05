@@ -23,7 +23,7 @@ if 'label_encoder' not in st.session_state:
     st.session_state.label_encoder = None
 
 # Step 1: Upload dataset
-st.subheader("📂 Upload Dataset")
+st.subheader("📂 Upload Dataset for Training")
 uploaded_file = st.file_uploader("Upload `dataset.txt` file (separator = @)", type=["txt"])
 
 if uploaded_file:
@@ -34,9 +34,9 @@ if uploaded_file:
     # Step 2: Preprocess data
     st.subheader("🧹 Data Preprocessing and Vectorization")
 
-    dataset['label'] = LabelEncoder().fit_transform(dataset['label'].astype(str))
-    st.session_state.label_encoder = LabelEncoder()
-    dataset['label'] = pd.Series(st.session_state.label_encoder.fit_transform(dataset['label'].astype(str)))
+    le = LabelEncoder()
+    dataset['label'] = pd.Series(le.fit_transform(dataset['label'].astype(str)))
+    st.session_state.label_encoder = le  # Save for later use
 
     textdata = []
     labels = []
@@ -68,27 +68,28 @@ if uploaded_file:
     f1 = f1_score(y_test, y_pred, average='macro') * 100
 
     st.success("✅ Model Trained Successfully!")
-
     st.metric("🎯 Accuracy", f"{acc:.2f}%")
     st.metric("🎯 Precision", f"{prec:.2f}%")
     st.metric("🎯 Recall", f"{rec:.2f}%")
     st.metric("🎯 F1 Score", f"{f1:.2f}%")
 
-    # Save the model
+    # Save model
     os.makedirs("model", exist_ok=True)
     with open("model/rf.txt", 'wb') as f:
         pickle.dump(model, f)
+
     st.session_state.model = model
     st.success("✅ Model saved to `model/rf.txt`")
 
 # Step 4: Predict new data
 st.subheader("🔍 Predict Cybercrime on New Payloads")
-predict_file = st.file_uploader("Upload new data file (1 column with payloads only)", type=["csv"], key="predict_file")
+predict_file = st.file_uploader("Upload new data file (1 column: `payload`)", type=["csv"], key="predict_file")
 
-if predict_file and st.session_state.model and st.session_state.vectorizer:
+if predict_file and st.session_state.model and st.session_state.vectorizer and st.session_state.label_encoder:
     predict_data = pd.read_csv(predict_file)
+    
     if 'payload' not in predict_data.columns:
-        st.error("❌ The CSV must contain a 'payload' column.")
+        st.error("❌ The CSV must contain a column named 'payload'")
     else:
         clean_data = []
         for i in range(len(predict_data)):
@@ -100,8 +101,8 @@ if predict_file and st.session_state.model and st.session_state.vectorizer:
         X_new = normalize(X_new)
 
         preds = st.session_state.model.predict(X_new)
-        pred_labels = st.session_state.label_encoder.inverse_transform(preds)
+        decoded_preds = st.session_state.label_encoder.inverse_transform(preds)
 
-        st.subheader("🔎 Predictions:")
-        for i, prediction in enumerate(pred_labels):
-            st.write(f"**Sample {i+1}** → `{prediction}`")
+        st.subheader("📊 Predictions:")
+        for i, prediction in enumerate(decoded_preds):
+            st.write(f"Sample {i+1} → `{prediction}`")
